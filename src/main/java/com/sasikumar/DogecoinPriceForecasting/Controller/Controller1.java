@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sasikumar.DogecoinPriceForecasting.Model.Forecast;
 import com.sasikumar.DogecoinPriceForecasting.Service.GiveForecast;
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "https://dogecoin-forecasting-master.vercel.app")
 @RestController
 @RequestMapping("dogecoin")
 
@@ -25,4 +25,5 @@ public class Controller1 {
 	}
 
 }
+
 
