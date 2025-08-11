@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sasikumar.DogecoinPriceForecasting.Model.Forecast;
 import com.sasikumar.DogecoinPriceForecasting.Service.GiveForecast;
+@CrossOrigin(origins="*")
 @RestController
 @RequestMapping("dogecoin")
-@CrossOrigin
+
 public class Controller1 {
 	@Autowired
 	GiveForecast service;
@@ -24,3 +25,4 @@ public class Controller1 {
 	}
 
 }
+
