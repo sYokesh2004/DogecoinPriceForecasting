@@ -77,14 +77,14 @@ for _ in range(30):
 # # Save the last 30 days (including forecast) to CSV
 # df.tail(30).to_csv("forecast.csv")
 # print("Last 30 days saved as 'forecast.csv'")
-user = 'root'
-password = 'Itsme$k23'
-host = 'localhost'  # or your MySQL host
-port = '3306'       # default MySQL port
-database = 'dogecoinpriceforecasting'
+user = 'postgres'
+password = 'sasikumar23'
+host = 'db.zwcmmwdepxwdfdvxtamb.supabase.co'  # or your  host
+port = '5432'       # default MySQL port
+database = 'postgres'
 
 # Create the SQLAlchemy engine
-engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')
+engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}') 
 
 # Select the last 30 rows (forecast)
 forecast_data = df.tail(30).copy()
@@ -93,4 +93,4 @@ forecast_data.reset_index(inplace=True)  # To include 'Date' as a column
 # Save to MySQL (append to table if exists)
 forecast_data.to_sql(name='forecast_table', con=engine, if_exists='replace', index=False)
 
-print("Last 30 days forecast saved to MySQL table `forecast_table`")
+print("Last 30 days forecast saved to supabase table `forecast_table`")
