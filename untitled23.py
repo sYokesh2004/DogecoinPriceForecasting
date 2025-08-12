@@ -72,19 +72,11 @@ except Exception as e:
     print(f"Error during forecasting/modeling: {e}")
     sys.exit(1)
 
-user = 'postgres'
-password = 'sasikumar23'
-host = 'db.zwcmmwdepxwdfdvxtamb.supabase.co'
-port = '5432'
-database = 'postgres'
+# Direct Supabase connection link
+connection_url = "postgresql+psycopg2://postgres:sasikumar23@db.zwcmmwdepxwdfdvxtamb.supabase.co:5432/postgres"
 
-try:
-    print("Creating SQLAlchemy engine...")
-    engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}')
-    print("Engine created successfully.")
-except Exception as e:
-    print(f"Error creating engine: {e}")
-    sys.exit(1)
+# Create SQLAlchemy engine
+engine = create_engine(connection_url)
 
 try:
     forecast_data = df.tail(30).copy()
