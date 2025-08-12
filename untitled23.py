@@ -81,7 +81,7 @@ user = 'postgres'
 password = 'sasikumar23'
 host = 'db.zwcmmwdepxwdfdvxtamb.supabase.co'  # or your  host
 port = '5432'       # default MySQL port
-database = 'postgres'
+database = 'Cryptocurrency Price Tracker'
 
 # Create the SQLAlchemy engine
 engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}') 
